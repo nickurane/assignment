@@ -1,0 +1,30 @@
+#container {
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  
+ #container::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+  
+  #container ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+  #content {
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  
+ #content::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+  
+  #content ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
