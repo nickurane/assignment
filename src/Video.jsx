@@ -1,10 +1,12 @@
 import React from 'react'
+import  delhi from "./assets/delhi.mp4"
 
-const Video = ({url}) => {
+
+const Video = () => {
   return (
-    <div className='md:w-[450px] md:h-[100px]'>
+    <div className='md:w-[450px] '>
     <video controls  >
-    <source src={url} type="video/mp4" />
+    <source src={delhi} type="video/mp4"  className='md:w-[450px] '/>
 
    </video>
    </div>
