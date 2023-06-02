@@ -1,13 +1,14 @@
-import { useState,useEffect } from 'react'
+import { useState } from 'react'
 import ladakha from "./assets/ladakha.jpg"
 import pune from "./assets/pune.jpg"
 import ladakha1 from "./assets/ladakha-1.jpg"
 import maldivas from "./assets/maldivas.jpg"
-import { BsArrowLeftCircleFill,BsArrowRightCircleFill } from 'react-icons/bs';
+
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import {FaPlay} from "react-icons/fa"
-import maldives1 from "./assets/maldives-1.mp4"
-import pune1 from "./assets/pune-1.mp4"
-import delhi from "./assets/delhi.mp4"
+
 import './App.css'
 import Video from "./Video"
 
@@ -41,14 +42,14 @@ function App() {
     id:1,
     text:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     heading:"Maldivs",
-    src:maldives1,
+   
   },
     {
     url:pune,
     id:2,
     text:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     heading:"Pune",
-    src:pune1
+   
     
   },
     {
@@ -70,7 +71,7 @@ function App() {
     id:5,
     text:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     heading:"Delhi",
-    src:delhi
+   
   
   },
   ]
@@ -99,43 +100,35 @@ function App() {
               
             
         </div>
-        <div className='flex justify-between  md:flex-row flex-col px-10 py-10 md:px-16 md:py-16 gap-10 '>
+        <div className='flex justify-between  md:flex-row flex-col px-10 py-10 md:px-16 md:py-16 gap-10 w-full '>
        
-          <div className=' flex justify-between p-2 items-center '>
-            <div className="absolute">
-              <button id="slideLeft">
-            <BsArrowLeftCircleFill className=" h-[35px]   w-[35px]"  />
-            </button>
-            </div>
 
      
-       <div className=' flex-row items-center  flex max-w-[1000px] overflow-x-scroll flex ' id="container">
-
+       
+       <Carousel infiniteLoop={true} autoPlay={true} interval={3000} 
+       onClickItem={(index) => setContent(data[index])
+      
+      }
+       
+       >
           
 {data.map((i)=>{
  return (
-           
-           <img src={i.url} key={i.id} className='p-1 md:w-[350px] md:h-[255px] z-3 ' onClick={()=>{setContent(i)
-            setvideoUrl(i.src)
-          
-          }} />
+           <div>
+             <img src={i.url} key={i.id}   />
               
+           </div>
+
+          
 
             
         
 )})}
+</Carousel >
 
-</div>
-<div className="">
-  <button  id="slideRight">
-  <BsArrowRightCircleFill className=" h-[35px]  w-[35px] -ml-8 "   />
 
-  </button>
-
-</div>
-      
             
- </div>
+ 
 
 
 
@@ -151,11 +144,18 @@ function App() {
 
 
           
-           <div className=' md:max-h-[340px] md:w-[590px] md:ml-[7rem]  '>
-                  <div  className=' absolute  md:w-[450px] md:h-[200px]  opacity-50  z-20 rounded-[10px]'  ></div>
+           <div className=' md:max-h-[440px] md:w-[590px] md:ml-[7rem]  '>
+                  <div  className=' absolute  md:w-[450px] md:h-[440px] bg-red-500 opacity-10  z-20 rounded-[10px]'  ></div>
                  
                  
-                  <Video url={videoUrl}  />
+                  <Video   />
+                  <div className='m-5' >
+                  <h1 className='font-bold text-xl pb-3'>Red Fort</h1>
+                  <p> A UNESCO World Heritage site, the Red
+                     Fort is an iconic symbol of Delhi. It served as the main residence of the Mughal emperors and features 
+                    impressive architecture and beautiful gardens.</p>
+                  
+                  </div>
                   
                    {/* <img src={ladakha}  className='md:w-[550px] md:h-[200px] rounded-[10px] z-0' onClick={()=>setContent(i)} /> */}
            </div>
