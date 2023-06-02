@@ -28,3 +28,21 @@
     background-color: transparent;
   }
   
+  .carousel .slider-wrapper {
+    overflow: visible;
+  }
+  .carousel .slider-wrapper:before,
+  .carousel .slider-wrapper:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+  }
+  .carousel .slider-wrapper:before {
+    left: 0;
+  }
+  .carousel .slider-wrapper:after {
+    right: 0;
+  }
+  
